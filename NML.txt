@@ -1,0 +1,27 @@
+NML  : NewGRF Meta language
+
+Format Of Nml File is XML Only.
+
+.NML is Traktor Collection File
+
+The nml file extension is used for files in News Markup Language (NewsML), 
+a compact, extensible and flexible structural framework for news
+
+NML is a a python-based compiler, capable of compiling NML files 
+(along with their associated language, sound and graphic files) into grf and / or nfo files.
+
+
+It all depends on whether that DTD referred to defines any entities
+ and the document you want to parse has any entity references to such entities.
+ If the XML does not have any entity references then you can safely ignore it by setting XmlResolver to null:
+
+            XmlReaderSettings xrs = new XmlReaderSettings();
+            xrs.XmlResolver = null;
+            xrs.ProhibitDtd = false;
+            using (XmlReader reader = XmlReader.Create(@"file.xml", xrs))
+
+            { 
+
+               // use reader here
+
+            }
